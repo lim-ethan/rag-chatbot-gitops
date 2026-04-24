@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rag-chatbot-config
+  namespace: rag-chatbot
+data:
+  MILVUS_HOST: "my-milvus.nexus.svc.cluster.local"
+  MILVUS_PORT: "19530"
+  MILVUS_COLLECTION: "rag_documents"
+  VLLM_BASE_URL: "http://vllm-qwen.rag-chatbot.svc.cluster.local:8000"
+  EMBEDDING_MODEL: "BAAI/bge-m3"
+  CHUNK_SIZE: "2000"
+  CHUNK_OVERLAP: "200"
+  TOP_K: "5"
+  SIMILARITY_THRESHOLD: "0.5"
+  LLM_TIMEOUT: "30"
+  SESSION_TTL_MINUTES: "30"
+  MAX_HISTORY_TURNS: "10"
+  MAX_FILE_SIZE_MB: "50"

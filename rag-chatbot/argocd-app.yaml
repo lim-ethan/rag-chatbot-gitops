@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rag-chatbot
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/lim-ethan/rag-chatbot-gitops
+    targetRevision: main
+    path: rag-chatbot
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rag-chatbot
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
