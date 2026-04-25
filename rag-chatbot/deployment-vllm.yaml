@@ -24,9 +24,11 @@ spec:
             - "--port"
             - "8000"
             - "--dtype"
-            - "float16"
+            - "float32"
+            - "--device"
+            - "cpu"
             - "--max-model-len"
-            - "4096"
+            - "2048"
           ports:
             - containerPort: 8000
           resources:
