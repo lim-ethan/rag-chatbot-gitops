@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: nexus.nexus.svc.cluster.local:5000/rag-chatbot-backend:21
+          image: 172.20.0.2:31500/rag-chatbot-backend:21
           ports:
             - containerPort: 8000
           envFrom:
